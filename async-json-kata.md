@@ -46,7 +46,7 @@ Hints:
 * [https://github.com/karma-runner/grunt-karma](https://github.com/karma-runner/grunt-karma)
 * [https://github.com/isaacs/node-glob](https://github.com/isaacs/node-glob)
 
-## Task 2: Write a function that requests the JSON data
+## Task 2: Write a function getData() that requests the JSON data
 
 **Everything from this point on should be done in strict TDD style**
 
@@ -83,7 +83,7 @@ For bonus points:
 
 * Don't hard code the JSON data object in your test spec – instead make it available by reading the file contents using NodeJS module(s) / function(s)
 
-## Task 3: Update your function to pass an Error object to the callback function if the JSON has a status of "failure"
+## Task 3: Update getData() to pass an Error object to the callback function if the JSON has a status of "failure"
 
 An updated implementation of `getData()` would look something like this:
 
