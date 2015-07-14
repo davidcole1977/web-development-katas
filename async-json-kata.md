@@ -116,7 +116,7 @@ Use the following Chai expect assertions:
 
 Update `getData()` to throw an Error if:
 
-* The function doesn't receive two arguments
+* The function receives fewer or more than two arguments
 * The first argument is not a string
 * The first argument has a length of 0
 * The second argument is not a function
@@ -130,6 +130,7 @@ Hints:
 * You'll find `Function.prototype.bind()` useful when using the throw / throws assertion – eg. `getData.bind(null, argument1, argument2)`
 * [http://stackoverflow.com/questions/21587122/mocha-chai-expect-to-throw-not-catching-thrown-errors](http://stackoverflow.com/questions/21587122/mocha-chai-expect-to-throw-not-catching-thrown-errors)
 * [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
+* [https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/arguments](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/arguments)
 
 ## Task 5: Incorporate getData() into a 'class' called DataHelper with a getData() method
 
