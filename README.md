@@ -2,7 +2,7 @@
 
 > A home for various web development-focused katas I've written
 
-## Asynchronous JSON Kata/blob/master/async-json-kata.md: Getting a little deeper with Mocha and Chai
+## Asynchronous JSON Kata: Getting a little deeper with Mocha and Chai
 
 [View Asynchronous JSON Kata](https://github.com/davidcole1977/davidcole1977/web-development-katas/blob/master/async-json-kata.md)
 
