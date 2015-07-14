@@ -15,7 +15,7 @@
 
 ## JSON fixture data we'll use
 
-**success.json fixture**
+**success.json**
 
 ```js
 {
@@ -24,7 +24,7 @@
 }
 ```
 
-**failure.json fixture**
+**failure.json**
 
 ```js
 {
