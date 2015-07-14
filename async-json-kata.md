@@ -110,7 +110,7 @@ Use the following Chai expect assertions:
 * `null`
 * Any other assertion you feel is suitable
 
-## Task 4: Update your function to throw an error if it receives invalid arguments
+## Task 4: Update getData() to throw an error if it receives invalid arguments
 
 **The tests for this task must not be asynchronous.**
 
@@ -132,7 +132,7 @@ Hints:
 * [http://stackoverflow.com/questions/21587122/mocha-chai-expect-to-throw-not-catching-thrown-errors](http://stackoverflow.com/questions/21587122/mocha-chai-expect-to-throw-not-catching-thrown-errors)
 * [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
 
-## Task 5: Incorporate your function into a 'class' called DataHelper with a getData() method
+## Task 5: Incorporate getData() into a 'class' called DataHelper with a getData() method
 
 An implementation of `getData()` would now look something like this:
 
