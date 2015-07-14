@@ -50,7 +50,7 @@ Hints:
 
 **Everything from this point on should be done in strict TDD style**
 
-Create a function called `getData()` that's a wrapper / facade for JQuery's `get()` function (or using `XMLHttpRequest`) and fetches JSON data from a web server, passing the fetched data as an argument to a callback function.
+Create a function called `getData()` that's a wrapper / facade for JQuery's `get()` function (or `XMLHttpRequest`) and requests JSON data from a web server, passing the requested data as an argument to a callback function.
 
 An implementation of `getData()` would look something like this:
 
