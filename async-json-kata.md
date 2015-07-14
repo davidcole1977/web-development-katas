@@ -46,7 +46,7 @@ Hints:
 * [https://github.com/karma-runner/grunt-karma](https://github.com/karma-runner/grunt-karma)
 * [https://github.com/isaacs/node-glob](https://github.com/isaacs/node-glob)
 
-## Task 2: Write a function that fetches the JSON data
+## Task 2: Write a function that requests the JSON data
 
 **Everything from this point on should be done in strict TDD style**
 
