@@ -37,8 +37,7 @@
 **You don't need to write any unit tests for this part.**
 
 * Create the two fixture json files as above and place them in a fixtures folder within the unit tests folder
-* Update the Grunt Karma task configuration so that the files – and any file in the same folder with a .json extension – are served by Karma's webserver, but are not run (included), or watched by Karma for changes.
-
+* Update the Grunt Karma task configuration so that the files – and any file in the same folder with a .json extension – are served by Karma's webserver, but are not run (included) in your test code.
 Hints:
 
 * [http://karma-runner.github.io/0.8/config/configuration-file.html](http://karma-runner.github.io/0.8/config/configuration-file.html)
