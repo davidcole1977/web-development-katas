@@ -7,9 +7,9 @@
 
 * **Begin to apply test-driven development to real world web development**
 * **Become familiar with Chai's expect assertion style and various different assertions**
-* **Become familiar with asynchronous tsting in Mocha**
+* **Become familiar with asynchronous testing in Mocha**
 * **Become familiar with Mocha's beforeEach() hook**
-* **Become familiar with the idea of using fixture data in your unit tests**
+* **Become familiar with using fixture data in your unit tests**
 
 ## JSON fixture data we'll use
 
