@@ -124,7 +124,6 @@ Update `getData()` to throw an Error if:
 Use the following Chai expect() assertions:
 
 * `throw` / `throws`
-* Any other assertion you feel is suitable
 
 Hints:
 
