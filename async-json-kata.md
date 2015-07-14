@@ -83,7 +83,7 @@ For bonus points:
 
 * Don't hard code the JSON data object in your test spec – instead make it available by reading the file contents using NodeJS module(s) / function(s)
 
-## Task 3: Update your function to return an `error` argument if the JSON has a status of "failure"
+## Task 3: Update your function to pass an Error object to the callback function if the JSON has a status of "failure"
 
 An updated implementation of `getData()` would look something like this:
 
