@@ -114,7 +114,7 @@ Use the following Chai expect assertions:
 
 **The tests for this task must not be asynchronous.**
 
-Update `getData()` to throw an Error (taking a strictly TDD approach, as always) if:
+Update `getData()` to throw an Error if:
 
 * The function receives fewer or more than two arguments
 * The first argument is not a string
