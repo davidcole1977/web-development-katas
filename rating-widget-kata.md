@@ -2,7 +2,7 @@
 
 # Rating Widget Kata
 
-> A web development kata that introduces TDD style development for Javascript / web browser DOM interaction, and also introduces the concept of dummy test doubles and spies.
+> A web development kata that introduces TDD style development for Javascript web browser DOM interaction, and also introduces the concept of dummy test doubles and spies.
 
 ## Kata Aims
 
