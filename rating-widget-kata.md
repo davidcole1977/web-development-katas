@@ -51,6 +51,13 @@ The HTML for the rating widget will look like this:
 ```
 
 1. Start by setting up your tests so that the fixture HTML above will be dynamically inserted into the 'fixtures' area of the web page before each test and removed after each test.
+2. In your Javascript code for the rating widget, create a function called `getRatingValue(element)` that receives an HTML element as its argument and returns the rating value associated with that element. Remember to do this in TDD fashion, so create the test first. Use HTML elements from the fixture HTML as the `element` argument(s) you'll pass to the test(s) you create.
+
+Hints:
+* Your unit testing framework should have hooks to help you set up and remove your fixture HTML – possible called something like `beforeEach` and `afterEach`, or `setup` and `teardown`.
+
+## Step 2
+
 2. In your Javascript code for the rating widget, create an event handler function `onSelectRating(event)` that receives the event argument that would be passed to it by an event listener. For the purposes of this exercise you don't strictly need to create the actual event listener, as we won't be testing it directly, but you might find it helps you understand the code.
 3. Create another function `setRating(value)`.
 4. It's time to create your first test. We want to assert that when `onSelectRating()` is called, it in turn calls `setRating()`, passing to it a value that corresponds to the value of the HTML radio button that triggered the event.
@@ -63,10 +70,7 @@ The HTML for the rating widget will look like this:
 ```
 
 Hints:
-* Your unit testing framework should have hooks to help you set up and remove your fixture HTML – possible called something like `beforeEach` and `afterEach`, or `setup` and `teardown`.
 * [Sinon's documentation on spies](http://sinonjs.org/docs/#spies)
-
-## Step 2
 
 ## Step 3
 
