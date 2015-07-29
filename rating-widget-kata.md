@@ -35,7 +35,7 @@ function doStuff (event) {
 document.querySelector('button').addEventListener('click', doStuff);
 ```
 
-## Step 1: set up the HTML fixture and write the first test
+## Step 1: set up the HTML fixture / set up and tear down and `getRating()` / retrieving from the DOM
 
 The HTML for the rating widget will look like this:
 
@@ -51,12 +51,18 @@ The HTML for the rating widget will look like this:
 ```
 
 1. Start by setting up your tests so that the fixture HTML above will be dynamically inserted into the 'fixtures' area of the web page before each test and removed after each test.
-2. In your Javascript code for the rating widget, create a function called `getRatingValue(element)` that receives an HTML element as its argument and returns the rating value associated with that element. Remember to do this in TDD fashion, so create the test first. Use HTML elements from the fixture HTML as the `element` argument(s) you'll pass to the test(s) you create.
+2. In your Javascript code for the rating widget, create a function called `getRating(element)` that receives an HTML element as its argument and returns the rating value associated with that element. Remember to do this in TDD fashion, so create the test first. Use HTML elements from the fixture HTML as the `element` argument(s) you'll pass to the test(s) you create.
 
 Hints:
 * Your unit testing framework should have hooks to help you set up and remove your fixture HTML – possible called something like `beforeEach` and `afterEach`, or `setup` and `teardown`.
 
-## Step 2
+## Step 2: `displayRating()` and modifying the DOM
+
+## Step 3: `setRating()` and spies
+
+## Step 4: `onSelectRating()` and dummies
+
+
 
 2. In your Javascript code for the rating widget, create an event handler function `onSelectRating(event)` that receives the event argument that would be passed to it by an event listener. For the purposes of this exercise you don't strictly need to create the actual event listener, as we won't be testing it directly, but you might find it helps you understand the code.
 3. Create another function `setRating(value)`.
