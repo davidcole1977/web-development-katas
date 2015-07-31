@@ -126,7 +126,7 @@ Hints:
 	* Call the associated model's update function
 * You'll need to create a fake (dummy) version of an event object to pass to `onInputUpdate()` in your test(s). As you only really need to know the event's `target` property, one way to do this would be to simply create a Javascript object with a single property `target` that has a DOM element as its value.
 * As you've tested the various individual functions already, you shouldn't need to fully test them all again – only create enough new tests to gain confidence this function does what it should.
-* Once you've verified it's working for the HTML fixture, add several new HTML ratings components with different film names and udpate your tests / Javascript to ensure that the correct HTML components and model attributes are being updated when `onInputUpdate()` is called with different event objects.
+* Once you've verified it's working for the HTML fixture, add several new HTML ratings components with different film names and udpate your tests / Javascript to ensure that the correct HTML components and model attributes are being updated when `onInputUpdate()` is called with different event target elemements.
 
 ```js
 function onSelectRating (event) {
