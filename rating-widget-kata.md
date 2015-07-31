@@ -1,29 +1,32 @@
-> THIS IS WORK IN PROGRESS AND IS SIGNIFICANTLY FLAWED. PLEASE COME BACK LATER.
+# Movies rating widget kata
 
-# Rating Widget Kata
-
-> A web development kata that introduces TDD style development for Javascript web browser DOM interaction, and also introduces the concept of dummy test doubles and spies.
+> A web development kata that introduces TDD style development for Javascript web browser DOM interaction, and also introduces the concepts of dummy test doubles and spies.
 
 ## Kata Aims
 
-The main aim is to become comfortable with the idea of doing taking a TDD (Test-Driven Development) approach to Javascript that interacts with the browser DOM (Document Object Model) and also get an introduction to using spies and test double dummies. We'll do this by creating a simple five star rating HTML componenent: clicking any of the 'star' buttons will cause the corresponding number of stars to become highlighted and call a function that could be used to communicate the state of the rating component.
+The main aim is to become comfortable with the idea of doing taking a TDD (Test-Driven Development) approach to Javascript that interacts with the web browser DOM and also get an introduction to using dummy test doubles and spies in unit testing.
 
-Please note that this kata does not necessarily encourage testing best practices, but rather aims to introduce some of the techniques you'll find useful in unit testing that involves the DOM.
+We'll do this by creating a simple five star rating HTML & Javascript componenent / module – `MyRating`. Clicking any of the 'star' buttons will cause the corresponding number of stars to become highlighted and communicate the state to an external model that holds the ratings for a range of movies (or anything else ratable).
+
+We won't be doing any CSS in the kata. In fact we won't be looking at it in the browser at all – all development work will be done through unit tests.
+
+Please note that this kata does not necessarily demonstrate testing or development best practices, but rather aims to introduce some of the techniques you'll find useful in unit testing that involves the DOM.
 
 ## Before You Start
 
-* You'll need a Javascript testing framework and a Javascript library that will let you create spies. For testing code in the browser I tend to use [Karma](http://karma-runner.github.io/0.13/index.html) running on [Grunt](http://gruntjs.com/), but any testing framework that runs in the browser will do. If you're new to unit testing and build tooling, you might find it easier to get started with [QUnit](https://qunitjs.com/). For the spies, [Sinon.js](http://sinonjs.org/) is highly recommended.
+* You'll need a Javascript testing framework that runs in the browser and a Javascript library that will let you create spies. For testing code in the browser I tend to use [Karma](http://karma-runner.github.io/0.13/index.html) with [Mocha](http://mochajs.org/) running on [Grunt](http://gruntjs.com/), but any unit testing framework that runs in the browser will do. If you're new to unit testing and build tooling, you might find it easier to get started with [QUnit](https://qunitjs.com/). For the spies, [Sinon.js](http://sinonjs.org/) is highly recommended.
 * You should have a basic level of familiarity with [test-driven development](https://msdn.microsoft.com/en-us/library/aa730844(v=vs.80).aspx) and unit testing.
 * Try to allow around an hour for the kata. Depending on your level of expertise you might not get the whole kata finished in an hour, but you should certainly make good progress.
-* Repeat the kata as often as you like – experiment with different ways to write tests and reach a solution.
+* If you repeat the kata, try skipping straight to step 4 and experiment with different ways to write tests and solve the kata. You could also try removing all tests apart from those you wrote for step 4 and then refactor your previous solution to work in a different way while still passing the tests.
 
 ## Kata Rules
 
-* Use a strict [test-driven development](https://msdn.microsoft.com/en-us/library/aa730844(v=vs.80).aspx) approach.
-* Don't read ahead – complete each step before looking at what's involved in the next task.
+* Use a strict test-driven development approach.
+* Don't read ahead – complete each step before looking at the next one.
 * Don't worry about input validation or sanitising, or edge cases – stick to the happy path.
 * If working in groups, programme in pairs. If you're new to pair programming, ping pong-style pairing is a good way to start: one person writes a failing test; the other person then writes the code that causes that test to pass then writes the next test.
 * None of your tests should need to simulate user interaction in the browser (eg. triggering events). If you find yourself needing to do this then you probably need to separate the function that handles user input from the event binding (see the example below).
+* Feel free to use jQuery or a similar library for DOM traversal, element selection and getting or setting element properties, but don't use the library for anything else.
 
 ```js
 // not so great: you'll need to trigger the event to test the function associated with the event handler
@@ -40,106 +43,96 @@ function doStuff (event) {
 document.querySelector('button').addEventListener('click', doStuff);
 ```
 
+
 ## Step 1: `getRating()` and fixture set up / tear down
 
 The HTML for the rating widget will look like this:
 
-```html
-<fieldset>
-  <legend>Rating widget</legend>
-  <input type="radio" value="1" name="rating" id="rating-1"/><label for="rating-1">1</label>
-  <input type="radio" value="2" name="rating" id="rating-2"/><label for="rating-2">2</label>
-  <input type="radio" value="3" name="rating" id="rating-3"/><label for="rating-3">3</label>
-  <input type="radio" value="4" name="rating" id="rating-4"/><label for="rating-4">4</label>
-  <input type="radio" value="5" name="rating" id="rating-5"/><label for="rating-5">5</label>
+```xml
+<fieldset data-myrating-key="human-nature" data-myrating-rating="1" data-myrating-role="container">
+  <legend>Rate Human Nature, by Michel Gondry</legend>
+  
+  <input type="radio" value="1" name="rating-human-nature" data-myrating-value="1" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-1"/>
+  <label for="rating-1" data-myrating-role="output-segment" data-myrating-value="1" data-myrating-key="human-nature">1</label>
+  
+  <input type="radio" value="2" name="rating-human-nature" data-myrating-value="2" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-2"/>
+  <label for="rating-2" data-myrating-role="output-segment" data-myrating-value="2" data-myrating-key="human-nature">2</label>
+  
+  <input type="radio" value="3" name="rating-human-nature" data-myrating-value="3" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-3"/>
+  <label for="rating-3" data-myrating-role="output-segment" data-myrating-value="3" data-myrating-key="human-nature">3</label>
+  
+  <input type="radio" value="4" name="rating-human-nature"data-myrating-value="4" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-4"/>
+  <label for="rating-4" data-myrating-role="output-segment" data-myrating-value="4" data-myrating-key="human-nature">4</label>
+  
+  <input type="radio" value="5" name="rating-human-nature" data-myrating-value="5" data-myrating-key="human-nature" data-myrating-role="input" id="rating-human-nature-5"/>
+  <label for="rating-5" data-myrating-role="output-segment" data-myrating-value="5" data-myrating-key="human-nature">5</label>
 </fieldset>
 ```
 
 * Start by setting up your tests so that the fixture HTML above will be dynamically inserted into the 'fixtures' area of the web page before each test and removed after each test.
-* In your Javascript code for the rating widget, create a function called `getRating(DOMelement)` that receives a single radio input DOM element as its argument and returns the rating value associated with that element.
-* Remember to do this in TDD fashion, so create the test first before you write any Javascript.
-* Use DOM elements from the fixture HTML as the `DOMelement` argument you'll pass to the function in the test(s) you create.
+* Remember, use a strict TDD approach, so always write your tests before writing any code (but treat the HTML fixture as part of the test).
+* Create a Javascript module called `MyRating`
+* Create a module function called `extractRating()`
+	* `extractRating()` should accept one argument, an HTML element and should return the value of the element's `data-myrating-value` attribute, converted to an integer
+	* For your tests, use the HTML fixture element(s) with the data attribute `data-myrating-role="input-segment"` as the function argument
+* Create a similar method `extractKey()` that returns the value of the element's data attribute `data-myrating-key`
 
 ```js
-function getRating (DOMelement) {
-  // returns the rating value associated with the element
+function extractRating (DOMelement) {
+  // returns the rating value associated with the element as an integer
+}
+```
+
+```js
+function extractKey (DOMelement) {
+  // returns the rating value associated with the element as an integer
 }
 ```
 
 Hints:
 * Your unit testing framework should have hooks to help you set up and remove your fixture HTML – possible called something like `beforeEach` and `afterEach`, or `setup` and `teardown`.
+* For tests that are easier to maintain and read, also use the setup hook to create a new instance of the `Rating` constructor before each test.
+
 
 ## Step 2: `displayRating()` and DOM manipulation
 
-* Create rating component fixture in the DOM to refect the rating value.
-* This should be done by adding a class 'selected' to the the number of radio button components equivalent to the rating value. For instance, if the rating is three, the first three radio inputs will have a class of 'selected' and the remaining two will not.
-
-```js
-function displayRating (rating) {
-  // updates the rating component in the DOM to refect the rating value (number 1 - 5)
-}
-```
-
-### Example HTML fixture state with a rating of 3
-
-```html
-<fieldset>
-  <legend>Rating widget</legend>
-  <input type="radio" value="1" name="rating" id="rating-1" class="selected"/><label for="rating-1">1</label>
-  <input type="radio" value="2" name="rating" id="rating-2" class="selected/><label for="rating-2">2</label>
-  <input type="radio" value="3" name="rating" id="rating-3" class="selected/><label for="rating-3">3</label>
-  <input type="radio" value="4" name="rating" id="rating-4"/><label for="rating-4">4</label>
-  <input type="radio" value="5" name="rating" id="rating-5"/><label for="rating-5">5</label>
-</fieldset>
-```
-
-Hints:
-* foo
-
-## Step 3: `setRating()`, dummies and spies
-
-setRating() is the event handler
-spy on displayRating() to determine if it:
-* was called
-* received the value corresponding to the radio input clicked
+* Create a new function `displayRaying()`
+* This should accept a single argument, the rating value
+	* The method should update the value of the data attribute `data-myrating-rating` on the HTML fixture element
 
 
+## Step 3: `setModelCallback()`, `updateModel()` and spies
 
-
-
-
-
-* Create an event handler function `setRating(event)` that receives an event object as its argument.
-* The function should 
-* It's up to you whether or not to create and hook up the event listener at this point, but do not test the listener, only test the event handler function directly.
-* You'll need to create a fake (dummy) version of the event object to pass to `onSelectRating()` in your test(s). As you only really need to know the event `target`, one way to do this would be to simply create a Javascript object with a single property `target` that has a DOM element as its value
-
-```js
-function onSelectRating (event) {
-  // updates the rating component in the DOM to refect the rating value (number 1 - 5)
-}
-```
-
-Hints:
-* foo
-
-## Step 4
-> Create function `setRating()` (and spies?)
-
-2. In your Javascript code for the rating widget, create an event handler function `onSelectRating(event)` that receives the event argument that would be passed to it by an event listener. For the purposes of this exercise you don't strictly need to create the actual event listener, as we won't be testing it directly, but you might find it helps you understand the code.
-3. Create another function `setRating(value)`.
-4. It's time to create your first test. We want to assert that when `onSelectRating()` is called, it in turn calls `setRating()`, passing to it a value that corresponds to the value of the HTML radio button that triggered the event.
-  * Remember that we will not actually be simulating any user interaction or triggering any events, so we need a way to fake this part.
-  * We also need a way to determine if `setRating()` was called and the value passed to it. As we're testing `onSelectRating()` and not `setRating()`, we'll need some help with this, which is where Sinon's spies come in.
-
-**Event object dummy example**
-```js
-
-```
+* Create a new function: `setModelCallback()`
+	* `setModelCallback()` receives a single argument: a callback function
+* Create a new function `updateModel()`
+	* `updateModel()` receives two arguments: `key` (the key name of the thing being rated – eg. `'human-nature'`) and `rating`, the rating value
+	* When `updateModel()` is called, the callback function defined using `setModelCallback()` should be called, and should be passed the `key` and `rating` values
+	* Use a Sinon `Spy` to help you assert that the function has been called and has received the correct arguments
 
 Hints:
 * [Sinon's documentation on spies](http://sinonjs.org/docs/#spies)
 
-## Step 3
 
-## Step 4
+## Step 4: `onInputUpdate()` and putting it all together
+
+* Create an event handler function `onInputUpdate()` that receives an event object as its argument.
+* This is the function that you would associate with an event listener (but don't create the event listener)
+* When called, `onInputUpdate()` should use the functions you already created to:
+	* Get the rating value and key name associated with the event `target` DOM object
+	* Update the display (HTML DOM / view) to indicate the new rating
+	* Call the associated model's update function
+* You'll need to create a fake (dummy) version of an event object to pass to `onInputUpdate()` in your test(s). As you only really need to know the event's `target` property, one way to do this would be to simply create a Javascript object with a single property `target` that has a DOM element as its value.
+* As you've tested the various individual functions already, you shouldn't need to fully test them all again – only create enough new tests to gain confidence this function does what it should.
+* Once you've verified it's working for the HTML fixture, add several new HTML ratings components with different film names and udpate your tests / Javascript to ensure that the correct HTML components and model attributes are being updated when `onInputUpdate()` is called with different event objects.
+
+```js
+function onSelectRating (event) {
+  // Get the rating value and key name associated with the event `target` DOM object
+  // Update the display (view) to indicate the new rating
+  // Call the associated model's update function
+}
+```
+
+Hints:
+* [A concise Stack Overflow description of the different between dummies, fakes, mocks and stubs](http://stackoverflow.com/questions/3459287/whats-the-difference-between-a-mock-stub#answer-17810004)
