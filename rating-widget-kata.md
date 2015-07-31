@@ -23,7 +23,7 @@ Please note that this kata does not necessarily demonstrate testing or developme
 * Use a strict test-driven development approach.
 * Don't read ahead – complete each step before looking at the next one.
 * Don't worry about input validation or sanitising, or edge cases – stick to the happy path.
-* If working in groups, programme in pairs. If you're new to pair programming, ping pong-style pairing is a good way to start: one person writes a failing test; the other person then writes the code that causes that test to pass then writes the next test.
+* If working in groups, program in pairs. If you're new to pair programming, ping pong-style pairing is a good way to start: one person writes a failing test; the other person then writes the code that causes that test to pass then writes the next test.
 * None of your tests should need to simulate user interaction in the browser (eg. triggering events). If you find yourself needing to do this then you probably need to separate the event handler function from the event binding (see the example below).
 * Feel free to use jQuery or a similar library for DOM traversal, element selection and getting or setting element properties, but don't use the library for anything else.
 
