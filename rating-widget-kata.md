@@ -6,7 +6,7 @@
 
 The main aim is to become comfortable with the idea of doing taking a TDD (Test-Driven Development) approach to Javascript that interacts with the web browser DOM and also get an introduction to using dummy test doubles and spies in unit testing.
 
-We'll do this by creating a simple five star rating HTML & Javascript componenent / module – `MyRating`. Clicking any of the 'star' buttons will cause the corresponding number of stars to become highlighted and communicate the state to an external model that holds the ratings for a range of movies (or anything else ratable). (We won't be creating the model as part of this kata)
+We'll do this by creating a simple five star rating HTML & Javascript componenent / module – `MyRating`. Clicking any of the 'star' buttons will cause the corresponding number of stars to become highlighted and communicate the state to an external model that holds the ratings for a range of movies (or anything else ratable). (We won't create the model as part of this kata, but it would be easy enough to stub this out if you wish)
 
 We won't be doing any CSS in the kata. In fact we won't be looking at it in the browser at all – all development work will be done through unit tests.
 
