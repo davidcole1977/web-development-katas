@@ -17,7 +17,6 @@ Please note that this kata does not necessarily demonstrate testing or developme
 * You'll need a Javascript testing framework that runs in the browser and a Javascript library that will let you create spies. For testing code in the browser I tend to use [Karma](http://karma-runner.github.io/0.13/index.html) with [Mocha](http://mochajs.org/) running on [Grunt](http://gruntjs.com/), but any unit testing framework that runs in the browser will do. If you're new to unit testing and build tooling, you might find it easier to get started with [QUnit](https://qunitjs.com/). For the spies, [Sinon.js](http://sinonjs.org/) is highly recommended.
 * You should have a basic level of familiarity with [test-driven development](https://msdn.microsoft.com/en-us/library/aa730844(v=vs.80).aspx) and unit testing.
 * Try to allow around an hour for the kata. Depending on your level of expertise you might not get the whole kata finished in an hour, but you should certainly make good progress.
-* If you repeat the kata, try skipping straight to step 4 and experiment with different ways to write tests and solve the kata. You could also try removing all tests apart from those you wrote for step 4 and then refactor your previous solution to work in a different way while still passing the tests.
 
 ## Kata Rules
 
@@ -43,6 +42,9 @@ function doStuff (event) {
 document.querySelector('button').addEventListener('click', doStuff);
 ```
 
+### If you repeat the kata
+
+If you repeat the kata, try skipping straight to step 4 and experiment with different ways to write tests and solve the kata. You could also try removing all tests apart from those you wrote for step 4 and then refactor your previous solution to work in a different way while still passing the tests.
 
 ## Step 1: `getRating()` and fixture set up / tear down
 
