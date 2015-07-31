@@ -1,4 +1,4 @@
-# Movies rating widget kata
+# Rating widget kata
 
 > A web development kata that introduces TDD style development for Javascript web browser DOM interaction, and also introduces the concepts of dummy test doubles and spies.
 
