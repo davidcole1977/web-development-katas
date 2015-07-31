@@ -40,8 +40,7 @@ function doStuff (event) {
 document.querySelector('button').addEventListener('click', doStuff);
 ```
 
-## Step 1
-> `getRating()` and fixture set up / tear down
+## Step 1: `getRating()` and fixture set up / tear down
 
 The HTML for the rating widget will look like this:
 
@@ -70,8 +69,7 @@ function getRating (DOMelement) {
 Hints:
 * Your unit testing framework should have hooks to help you set up and remove your fixture HTML – possible called something like `beforeEach` and `afterEach`, or `setup` and `teardown`.
 
-## Step 2
-> `displayRating()` and DOM manipulation
+## Step 2: `displayRating()` and DOM manipulation
 
 * Create rating component fixture in the DOM to refect the rating value.
 * This should be done by adding a class 'selected' to the the number of radio button components equivalent to the rating value. For instance, if the rating is three, the first three radio inputs will have a class of 'selected' and the remaining two will not.
@@ -98,8 +96,7 @@ function displayRating (rating) {
 Hints:
 * foo
 
-## Step 3
-> `setRating()`, dummies and spies
+## Step 3: `setRating()`, dummies and spies
 
 setRating() is the event handler
 spy on displayRating() to determine if it:
