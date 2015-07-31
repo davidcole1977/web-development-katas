@@ -27,7 +27,9 @@ Please note that this kata does not necessarily encourage testing best practices
 
 ```js
 // not so great: you'll need to trigger the event to test the function associated with the event handler
-document.querySelector('button').addEventListener('click', function (event) { // do stuff });
+document.querySelector('button').addEventListener('click', function (event) {
+  // do stuff
+});
 
 // definitely better: you can test the event handler function without having to trigger the event
 // your code is also more readable, flexible and maintainable – result!
