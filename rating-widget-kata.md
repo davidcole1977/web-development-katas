@@ -55,19 +55,19 @@ The HTML for the rating widget will look like this. It uses radio inputs (for po
   <legend>Rate Human Nature, by Michel Gondry</legend>
   
   <input type="radio" value="1" name="rating-human-nature" data-myrating-value="1" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-1"/>
-  <label for="rating-1" data-myrating-role="output-segment" data-myrating-value="1" data-myrating-key="human-nature">1</label>
+  <label for="rating-human-nature-1" data-myrating-role="output-segment" data-myrating-value="1" data-myrating-key="human-nature">1</label>
   
   <input type="radio" value="2" name="rating-human-nature" data-myrating-value="2" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-2"/>
-  <label for="rating-2" data-myrating-role="output-segment" data-myrating-value="2" data-myrating-key="human-nature">2</label>
+  <label for="rating-human-nature-2" data-myrating-role="output-segment" data-myrating-value="2" data-myrating-key="human-nature">2</label>
   
   <input type="radio" value="3" name="rating-human-nature" data-myrating-value="3" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-3"/>
-  <label for="rating-3" data-myrating-role="output-segment" data-myrating-value="3" data-myrating-key="human-nature">3</label>
+  <label for="rating-human-nature-3" data-myrating-role="output-segment" data-myrating-value="3" data-myrating-key="human-nature">3</label>
   
   <input type="radio" value="4" name="rating-human-nature"data-myrating-value="4" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-4"/>
-  <label for="rating-4" data-myrating-role="output-segment" data-myrating-value="4" data-myrating-key="human-nature">4</label>
+  <label for="rating-human-nature-4" data-myrating-role="output-segment" data-myrating-value="4" data-myrating-key="human-nature">4</label>
   
   <input type="radio" value="5" name="rating-human-nature" data-myrating-value="5" data-myrating-key="human-nature" data-myrating-role="input" id="rating-human-nature-5"/>
-  <label for="rating-5" data-myrating-role="output-segment" data-myrating-value="5" data-myrating-key="human-nature">5</label>
+  <label for="rating-human-nature-5" data-myrating-role="output-segment" data-myrating-value="5" data-myrating-key="human-nature">5</label>
 </fieldset>
 ```
 
