@@ -63,7 +63,7 @@ The HTML for the rating widget will look like this. It uses radio inputs (for po
   <input type="radio" value="3" name="rating-human-nature" data-myrating-value="3" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-3"/>
   <label for="rating-human-nature-3" data-myrating-role="output-segment" data-myrating-value="3" data-myrating-key="human-nature">3</label>
   
-  <input type="radio" value="4" name="rating-human-nature"data-myrating-value="4" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-4"/>
+  <input type="radio" value="4" name="rating-human-nature" data-myrating-value="4" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-4"/>
   <label for="rating-human-nature-4" data-myrating-role="output-segment" data-myrating-value="4" data-myrating-key="human-nature">4</label>
   
   <input type="radio" value="5" name="rating-human-nature" data-myrating-value="5" data-myrating-key="human-nature" data-myrating-role="input" id="rating-human-nature-5"/>
