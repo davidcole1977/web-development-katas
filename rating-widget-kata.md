@@ -44,7 +44,7 @@ document.querySelector('button').addEventListener('click', doStuff);
 
 ### If you repeat the kata
 
-If you repeat the kata, try skipping straight to step 4 and experiment with different ways to write tests and solve the kata. You could also try removing all tests apart from those you wrote for step 4 and then refactor your previous solution to work in a different way while still passing the tests.
+If you repeat the kata, try skipping straight to step 4 and experiment with different ways to write tests and solve the kata. You could also try removing all tests apart from those you wrote for step 4 and then refactor your previous solution to work in a different way while still passing the tests. Consider whether you need to unit test each individual function, or whether you can determine a function is working correctly by testing other functions that call the function. Also consider how [code coverage](https://en.wikipedia.org/wiki/Code_coverage) might help in this.
 
 ## Step 1: `getRating()` and fixture set up / tear down
 
