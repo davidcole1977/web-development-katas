@@ -8,7 +8,7 @@ The main aim is to become comfortable with the idea of doing taking a TDD (Test-
 
 We'll do this by creating a simple five star rating HTML & Javascript componenent / module – `MyRating`. Clicking any of the 'star' buttons will cause the corresponding number of stars to become highlighted and communicate the state to an external model that holds the ratings for a range of movies (or anything else ratable). We won't create the model as part of this kata, but it would be easy enough to stub this out if you wish.
 
-We won't be doing any CSS in the kata. In fact we won't be looking at it in the browser at all – all development work will be done through unit tests.
+We won't be doing any CSS in the kata. In fact we won't be looking at it in the browser at all – all development work will be done through unit tests.
 
 Please note that this kata does not necessarily demonstrate testing or development best practices, but rather aims to introduce some of the techniques you'll find useful in unit testing that involves the DOM.
 
@@ -24,7 +24,7 @@ Please note that this kata does not necessarily demonstrate testing or developme
 * Don't read ahead – complete each step before looking at the next one.
 * Don't worry about input validation or sanitising, or edge cases – stick to the happy path.
 * If working in groups, programme in pairs. If you're new to pair programming, ping pong-style pairing is a good way to start: one person writes a failing test; the other person then writes the code that causes that test to pass then writes the next test.
-* None of your tests should need to simulate user interaction in the browser (eg. triggering events). If you find yourself needing to do this then you probably need to separate the function that handles user input from the event binding (see the example below).
+* None of your tests should need to simulate user interaction in the browser (eg. triggering events). If you find yourself needing to do this then you probably need to separate the event handler function from the event binding (see the example below).
 * Feel free to use jQuery or a similar library for DOM traversal, element selection and getting or setting element properties, but don't use the library for anything else.
 
 ```js
