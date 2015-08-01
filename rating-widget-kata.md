@@ -50,10 +50,9 @@ document.querySelector('button').addEventListener('click', doStuff);
 ### Discussion points
 
 * What are the advantages and disadvantages of simulating user interaction / triggering DOM events in your tests? 
-* Consider whether you need to unit test each individual function, or whether you can determine a function is working correctly by testing other functions that call the function.
-* What are the advantages and drawbacks to this approach?
+* Do you need to unit test each individual function, or can you can determine a function is working correctly by testing other functions that call the function. What are the advantages and drawbacks to this approach?
 * What about only testing public API functions and not private functions?
-* How could [code coverage](https://en.wikipedia.org/wiki/Code_coverage) help in this.
+* How could [code coverage](https://en.wikipedia.org/wiki/Code_coverage) help you decide what functions to test? What other factors might be involved?
 
 ## Step 1: `getRating()` and fixture set up / tear down
 
