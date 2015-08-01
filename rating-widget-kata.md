@@ -56,7 +56,7 @@ document.querySelector('button').addEventListener('click', doStuff);
 
 ## Step 1: `getRating()` and fixture set up / tear down
 
-The HTML for the rating widget will look like this. It uses radio inputs (for potential non-javascript compatibility), but has been coded using data attributes in such a way that you could easily use just about whatever HTML tags you like as long as you use the data attributes correctly.
+The HTML for the rating widget will look like this. It uses radio inputs (for potential non-javascript compatibility), but has been coded using data attributes in such a way that you could easily use just about whatever HTML tags you like as long as you use the data attributes correctly – the data attributes should be the only hooks your Javascript needs.
 
 ```xml
 <fieldset data-myrating-key="human-nature" data-myrating-rating="1" data-myrating-role="container">
