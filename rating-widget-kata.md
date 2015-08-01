@@ -101,7 +101,6 @@ function extractKey (DOMelement) {
 
 Hints:
 * Your unit testing framework should have hooks to help you set up and remove your fixture HTML – possible called something like `beforeEach` and `afterEach`, or `setup` and `teardown`.
-* For tests that are easier to maintain and read, also use the setup hook to create a new instance of the `Rating` constructor before each test.
 
 
 ## Step 2: `displayRating()` and DOM manipulation
