@@ -60,24 +60,15 @@ document.querySelector('button').addEventListener('click', doStuff);
 The HTML for the rating widget will look like this. It uses radio inputs (for potential non-javascript compatibility), but has been coded using data attributes in such a way that you could easily use just about whatever HTML tags you like as long as you use the data attributes correctly – the data attributes should be the only hooks your Javascript needs.
 
 ```xml
-<fieldset data-myrating-key="human-nature" data-myrating-rating="1" data-myrating-role="container">
-  <legend>Rate Human Nature, by Michel Gondry</legend>
+<div data-myrating-key="human-nature" data-myrating-rating="1" data-myrating-role="container">
+  <h3>Rate Human Nature, by Michel Gondry</h3>
   
-  <input type="radio" value="1" name="rating-human-nature" data-myrating-value="1" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-1"/>
-  <label for="rating-human-nature-1" data-myrating-role="output-segment" data-myrating-value="1" data-myrating-key="human-nature">1</label>
-  
-  <input type="radio" value="2" name="rating-human-nature" data-myrating-value="2" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-2"/>
-  <label for="rating-human-nature-2" data-myrating-role="output-segment" data-myrating-value="2" data-myrating-key="human-nature">2</label>
-  
-  <input type="radio" value="3" name="rating-human-nature" data-myrating-value="3" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-3"/>
-  <label for="rating-human-nature-3" data-myrating-role="output-segment" data-myrating-value="3" data-myrating-key="human-nature">3</label>
-  
-  <input type="radio" value="4" name="rating-human-nature" data-myrating-value="4" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-4"/>
-  <label for="rating-human-nature-4" data-myrating-role="output-segment" data-myrating-value="4" data-myrating-key="human-nature">4</label>
-  
-  <input type="radio" value="5" name="rating-human-nature" data-myrating-value="5" data-myrating-key="human-nature" data-myrating-role="input-segment" id="rating-human-nature-5"/>
-  <label for="rating-human-nature-5" data-myrating-role="output-segment" data-myrating-value="5" data-myrating-key="human-nature">5</label>
-</fieldset>
+  <span data-myrating-value="1" data-myrating-key="human-nature" data-myrating-role="input-segment">1</span>
+  <span data-myrating-value="2" data-myrating-key="human-nature" data-myrating-role="input-segment">2</span>
+  <span data-myrating-value="3" data-myrating-key="human-nature" data-myrating-role="input-segment">3</span>
+  <span data-myrating-value="4" data-myrating-key="human-nature" data-myrating-role="input-segment">4</span>
+  <span data-myrating-value="5" data-myrating-key="human-nature" data-myrating-role="input-segment">5</span>
+</div>
 ```
 
 * Start by setting up your tests so that the fixture HTML above will be dynamically inserted into the 'fixtures' area of the web page before each test and removed after each test.
